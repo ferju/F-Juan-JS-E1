@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrega 1 - Fernando Juan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Login</title>
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
-
 <body>
-  <h1>Entrega 1 - Fernando Juan</h1>
-  <p>Crea una lista con producto y cantidades
-  <p>Permite agregar, eliminar, mostrar contenido <br>
-    y la cantidad de objetos solicitados
 
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <div class="error-message" id="error-message"></div>
+    <form id="login-form">
+        <input type="text" id="usLaboratorio" placeholder="Laboratorio" required>
+        <input type="password" id="contraseña" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
 
+<script src="./JS/app.js"></script>
 
-  <script src="./JS/app.js"></script>
 </body>
-
 </html>
