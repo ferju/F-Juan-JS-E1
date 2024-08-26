@@ -7,10 +7,11 @@ const productos = [
     { Laboratorio: 'GBT', producto: 'Karfib', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
     { Laboratorio: 'GBT', producto: 'Leucocalcín', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
     { Laboratorio: 'GBT', producto: 'Rembre', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
-    { Laboratorio: 'Knight', producto: 'Leprid', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
+    { Laboratorio: 'Knight', producto: 'Dolufevir', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
     { Laboratorio: 'Knight', producto: 'Ladevina 5', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
     { Laboratorio: 'Knight', producto: 'Karfib', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
-    { Laboratorio: 'Knight', producto: 'Rembre', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' }
+    { Laboratorio: 'Knight', producto: 'Rembre', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' },
+    { Laboratorio: 'Knight', producto: 'Zyvalix', ancho: '40', alto: '85', profundidad: '40', colores: '2', precio1: 200, precio2: 300, precio3: 400, imagen: 'EST-DOLUFEVIR.png' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
