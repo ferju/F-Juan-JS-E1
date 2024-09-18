@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Guardados</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    
+
+</head>
+
+<body>
+    <header class="headerColor">
+        <div class="successContainer">
+            <p>Bienvenido, <span id="usernameDisplay"></span>!</p>
+        </div>
+        <a href="cliente.html">Productos</a>
+    </header>
+
+    <h1>Productos Guardados</h1>
+
+    <div id="contenedorGuardados">
+        <!-- Aquí se agregarán los productos guardados -->
+        <div class="productoGuardado">
+            <button class="eliminar-btn">Eliminar</button>
+            <strong>Producto 1</strong>
+            Precio: $10.00
+        </div>
+        <div class="productoGuardado">
+            <button class="eliminar-btn">Eliminar</button>
+            <strong>Producto 2</strong>
+            Precio: $20.00
+        </div>
+        <!-- Más productos -->
+    </div>
+
+    <div class="total" id="totalPrecio">Total Precio: $0.00</div>
+    <button class="confirmarCompra" id="confirmarCompra">Confirmar Compra</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

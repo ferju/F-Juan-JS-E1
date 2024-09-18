@@ -1,0 +1,15 @@
+[
+    { "Laboratorio": "GBT", "producto": "Leprid", "ancho": "40", "alto": "85", "profundidad": "40", "colores": "2", "precio1": 200, "precio2": 300, "precio3": 400, "imagen": "CRESEMBA-PACKAGING.png" },
+    { "Laboratorio": "GBT", "producto": "Ladevina 5", "ancho": "110", "alto": "45", "profundidad": "15", "colores": "3", "precio1": 95, "precio2": 395, "precio3": 595, "imagen": "EST-DOLUFEVIR.png" },
+    { "Laboratorio": "GBT", "producto": "Ladevina 10", "ancho": "110", "alto": "45", "profundidad": "15", "colores": "2", "precio1": 185, "precio2": 395, "precio3": 485400, "imagen": "pack-halaven-chile.png" },
+    { "Laboratorio": "GBT", "producto": "Ladevina 15", "ancho": "110", "alto": "45", "profundidad": "15", "colores": "4", "precio1": 400, "precio2": 500, "precio3": 600, "imagen": "Karfib.png" },
+    { "Laboratorio": "GBT", "producto": "Ladevina 25", "ancho": "110", "alto": "45", "profundidad": "15", "colores": "2", "precio1": 200, "precio2": 300, "precio3": 400, "imagen": "EST-OXITINOL-x-270-CP_BL_AR.png" },
+    { "Laboratorio": "GBT", "producto": "Karfib", "ancho": "45", "alto": "120", "profundidad": "45", "colores": "2", "precio1": 100, "precio2": 200, "precio3": 300, "imagen": "Est-Neway-10-x-30-CR_AR.png" },
+    { "Laboratorio": "GBT", "producto": "Leucocalcín", "ancho": "35", "alto": "70", "profundidad": "35", "colores": "4", "precio1": 400, "precio2": 500, "precio3": 600, "imagen": "EST-GALEXIG-0,8-mg-x-60-CR-_AR.png" },
+    { "Laboratorio": "GBT", "producto": "Rembre", "ancho": "40", "alto": "85", "profundidad": "40", "colores": "2", "precio1": 200, "precio2": 300, "precio3": 400, "imagen": "EST-FIBRIDONER-x-360-comprimidos.png" },
+    { "Laboratorio": "Knight", "producto": "Dolufevir", "ancho": "50", "alto": "90", "profundidad": "50", "colores": "2", "precio1": 200, "precio2": 300, "precio3": 400, "imagen": "est-op-1-H.png" },
+    { "Laboratorio": "Knight", "producto": "Ladevina 5", "ancho": "110", "alto": "45", "profundidad": "15", "colores": "2", "precio1": 150, "precio2": 350, "precio3": 450, "imagen": "est-op-1-vert.png" },
+    { "Laboratorio": "Knight", "producto": "Karfib", "ancho": "50", "alto": "90", "profundidad": "50", "colores": "2", "precio1": 200, "precio2": 300, "precio3": 400, "imagen": "KNT-3D-1.png" },
+    { "Laboratorio": "Knight", "producto": "Rembre", "ancho": "25", "alto": "80", "profundidad": "25", "colores": "2", "precio1": 95, "precio2": 295, "precio3": 395, "imagen": "KNT-3D-a.png" },
+    { "Laboratorio": "Knight", "producto": "Zyvalix", "ancho": "40", "alto": "85", "profundidad": "40", "colores": "2", "precio1": 200, "precio2": 300, "precio3": 400, "imagen": "est-op-1-H.png" }
+]

@@ -5,28 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Éxito</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
+
 </head>
 
 <body>
-    <div class="success-container">
-        <h1>¡Inicio de sesión exitoso!</h1>
-        <p>Bienvenido, <span id="username-display"></span>!</p>
-    </div>
+    <header class="headerColor">
+        <div class="successContainer">
+            <p>Bienvenido, <span id="usernameDisplay"></span>!</p>
+        </div>
+        <div id="carritoContenedor">
+            <img id="irAlCarrito" src="../imagenes/carritoBlanco.svg" alt="Ir al Carrito">
+        </div>
+</header>
+    
     <div class="buscadores">
         <div class="buscador1">
             <h2>Buscar Producto</h2><br>
-            <input class="input-text" type="text" id="busqueda-nombre" placeholder="Buscar por nombre" /><br>
-            <button class="btn-buscar" id="buscar">Buscar Producto</button>
+            <input class="inputText" type="text" id="busquedaNombre" placeholder="Buscar por nombre" /><br>
+            <button class="btnBuscar" id="buscar">Buscar Producto</button>
         </div>
         <div class="buscador2">
             <h2>Productos Filtrados por Laboratorio</h2><br>
-            <button class="btn-buscar1" onclick="mostrarProductos()">Mostrar Productos</button>
+            <button class="btnBuscar1" onclick="mostrarProductos()">Mostrar Productos</button>
         </div>
     </div>
     <div id="resultados" class="resultados"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
     <script src="../JS/script.js"></script>
+    
+    
+
 </body>
 
 </html>
