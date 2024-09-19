@@ -23,14 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             item.className = 'resultadoItem';
             item.innerHTML = `
                 <div class="prodouctoInfo">
-                <div class="productoDetalles">
-                        <h3>${producto.producto}</h3>
-                        </div>
-                    <div class="productImagenCont"><div class="productoImagen">
-                        <img src="../imagenes/${producto.imagen}" alt="${producto.producto}" class="productoImagen" />
-                    </div></div>
                     <div class="productoDetalles">
-                        
+                        <h3>${producto.producto}</h3>
+                    </div>
+                    <div class="productImagenCont">
+                        <div class="productoImagen">
+                            <img src="../imagenes/${producto.imagen}" alt="${producto.producto}" class="productoImagen" />
+                        </div>
+                    </div>
+                    <div class="productoDetalles">
                         <div class="productoDimensiones">
                             ${producto.ancho} x ${producto.alto} x ${producto.profundidad} mm
                         </div>
@@ -38,16 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>Colores:</strong> ${producto.colores}
                         </div>
                     </div>
-                    <div class="productoPresupuestoCont"><div class="productoPresupuesto">
-                        <strong>Presupuestar</strong><br>
-                        Cantidad:<br>
-                        <input class="inputText" type="number" min="1" dataProducto="${producto.producto}" placeholder="Cantidad a imprimir" /><br>
-                        <div class="productoPrecios">
-                            <strong>Precio Unitario:</strong> <span class="precioUnitario" dataProducto="${producto.producto}">0</span><br>
-                            <strong>Total: $</strong> <span class="precio" dataProducto="${producto.producto}">0</span>
-                        </div></div>
+                    <div class="productoPresupuestoCont">
+                        <div class="productoPresupuesto">
+                            <strong>Presupuestar</strong><br>
+                            Cantidad:<br>
+                            <input class="inputText" type="number" min="1" dataProducto="${producto.producto}" placeholder="Cantidad a imprimir" /><br>
+                            <div class="productoPrecios">
+                                <strong>Precio Unitario:</strong> <span class="precioUnitario" dataProducto="${producto.producto}">0</span><br>
+                                <strong>Total: $</strong> <span class="precio" dataProducto="${producto.producto}">0</span>
+                            </div>
+                        </div>
                         <div class="guardarBtnCont">
-                        <img src="../imagenes/carritoBlanco.svg" alt="Guardar" class="guardarBtn" dataProducto="${producto.producto}" />
+                            <img src="../imagenes/carritoBlanco.svg" alt="Guardar" class="guardarBtn" dataProducto="${producto.producto}" />
                         </div>
                     </div>
                 </div>
@@ -63,8 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', guardarProducto);
         });
     };
-
-
 
     const actualizarPrecio = (event) => {
         const cantidad = parseFloat(event.target.value) || 0;
@@ -106,7 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     document.getElementById('buscar').addEventListener('click', buscar);
-    document.querySelector('button[onclick="mostrarProductos()"]').addEventListener('click', mostrarProductos);
+
+    // Cambia la forma de llamar a mostrarProductos para evitar el error
+    const mostrarButton = document.getElementById('mostrarProductosButton'); // Asegúrate de tener este botón en tu HTML
+    if (mostrarButton) {
+        mostrarButton.addEventListener('click', mostrarProductos);
+    }
 
     const cargarProductos = async () => {
         try {
@@ -138,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-       
         const productoGuardar = {
             nombre: productoNombre,
             cantidad: cantidad,
@@ -146,9 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         let productosGuardados = JSON.parse(localStorage.getItem('productosGuardados')) || [];
-
         productosGuardados.push(productoGuardar);
-
         localStorage.setItem('productosGuardados', JSON.stringify(productosGuardados));
 
         Swal.fire({
