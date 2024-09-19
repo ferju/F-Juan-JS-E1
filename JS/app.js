@@ -21,7 +21,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
         if (usuarioLab) {
             localStorage.setItem('username', username);
-            window.location.href = './paginas/cliente.html';
+            window.location.href = 'paginas/cliente.html';
         } else {
             errorMessage.textContent = 'Usuario o contraseña incorrectos.';
         }
