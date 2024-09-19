@@ -287,6 +287,7 @@ const actualizarEstadoImagenCarrito = () => {
     }
 };
 
+
 actualizarEstadoImagenCarrito();
 
 document.getElementById('irAlCarrito').addEventListener('click', () => {
