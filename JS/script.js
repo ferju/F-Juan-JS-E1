@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cargarProductos = async () => {
         try {
-            const response = await fetch('../JSON/productos.json');
+            const response = await fetch('./JSON/productos.json');
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo JSON');
             }
