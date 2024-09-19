@@ -266,7 +266,6 @@ document.querySelectorAll('.eliminarImg').forEach(img => {
 });
 
 
-
 const actualizarEstadoImagenCarrito = () => {
     const imagenCarrito = document.getElementById('irAlCarrito');
     const productosGuardados = JSON.parse(localStorage.getItem('productosGuardados')) || [];
