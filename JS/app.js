@@ -9,7 +9,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
     try {
         // Cargar el archivo JSON con fetch
-        const response = await fetch('../JSON/usuario.json');
+        const response = await fetch('./JSON/usuario.json');
         if (!response.ok) {
             throw new Error('Error al cargar los datos');
         }
