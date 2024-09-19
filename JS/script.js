@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorGuardados = document.getElementById('contenedorGuardados');
     const totalPrecioElement = document.getElementById('totalPrecio');
