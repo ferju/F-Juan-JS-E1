@@ -268,6 +268,13 @@ document.querySelectorAll('.eliminarImg').forEach(img => {
 
 const actualizarEstadoImagenCarrito = () => {
     const imagenCarrito = document.getElementById('irAlCarrito');
+    if (imagenCarrito) {
+        imagenCarrito.addEventListener('click', () => {
+            window.location.href = '../paginas/carrito.html';
+        });
+    } else {
+        console.error('Element with ID "irAlCarrito" not found.');
+    }
     const productosGuardados = JSON.parse(localStorage.getItem('productosGuardados')) || [];
 
     if (productosGuardados.length > 0) {
