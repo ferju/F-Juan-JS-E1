@@ -23,14 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             item.className = 'resultadoItem';
             item.innerHTML = `
                 <div class="prodouctoInfo">
-                <div class="productoDetalles">
-                        <h3>${producto.producto}</h3>
-                        </div>
-                    <div class="productImagenCont"><div class="productoImagen">
-                        <img src="../imagenes/${producto.imagen}" alt="${producto.producto}" class="productoImagen" />
-                    </div></div>
                     <div class="productoDetalles">
-                        
+                        <h3>${producto.producto}</h3>
+                    </div>
+                    <div class="productImagenCont">
+                        <div class="productoImagen">
+                            <img src="../imagenes/${producto.imagen}" alt="${producto.producto}" class="productoImagen" />
+                        </div>
+                    </div>
+                    <div class="productoDetalles">
                         <div class="productoDimensiones">
                             ${producto.ancho} x ${producto.alto} x ${producto.profundidad} mm
                         </div>
@@ -38,16 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>Colores:</strong> ${producto.colores}
                         </div>
                     </div>
-                    <div class="productoPresupuestoCont"><div class="productoPresupuesto">
-                        <strong>Presupuestar</strong><br>
-                        Cantidad:<br>
-                        <input class="inputText" type="number" min="1" dataProducto="${producto.producto}" placeholder="Cantidad a imprimir" /><br>
-                        <div class="productoPrecios">
-                            <strong>Precio Unitario:</strong> <span class="precioUnitario" dataProducto="${producto.producto}">0</span><br>
-                            <strong>Total: $</strong> <span class="precio" dataProducto="${producto.producto}">0</span>
-                        </div></div>
+                    <div class="productoPresupuestoCont">
+                        <div class="productoPresupuesto">
+                            <strong>Presupuestar</strong><br>
+                            Cantidad:<br>
+                            <input class="inputText" type="number" min="1" dataProducto="${producto.producto}" placeholder="Cantidad a imprimir" /><br>
+                            <div class="productoPrecios">
+                                <strong>Precio Unitario:</strong> <span class="precioUnitario" dataProducto="${producto.producto}">0</span><br>
+                                <strong>Total: $</strong> <span class="precio" dataProducto="${producto.producto}">0</span>
+                            </div>
+                        </div>
                         <div class="guardarBtnCont">
-                        <img src="../imagenes/carritoBlanco.svg" alt="Guardar" class="guardarBtn" dataProducto="${producto.producto}" />
+                            <img src="../imagenes/carritoBlanco.svg" alt="Guardar" class="guardarBtn" dataProducto="${producto.producto}" />
                         </div>
                     </div>
                 </div>
@@ -63,8 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', guardarProducto);
         });
     };
-
-
 
     const actualizarPrecio = (event) => {
         const cantidad = parseFloat(event.target.value) || 0;
@@ -138,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-       
         const productoGuardar = {
             nombre: productoNombre,
             cantidad: cantidad,
@@ -157,12 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             text: 'El producto ha sido guardado exitosamente.',
         });
     };
-});
 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
     const contenedorGuardados = document.getElementById('contenedorGuardados');
     const totalPrecioElement = document.getElementById('totalPrecio');
     const confirmarCompraButton = document.getElementById('confirmarCompra');
@@ -178,30 +173,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let totalPrecio = 0;
 
-contenedorGuardados.innerHTML = '';
-productosGuardados.forEach((producto, index) => {
-    const item = document.createElement('div');
-    item.className = 'productoGuardado';
-    item.innerHTML = `
-        <div class="productoContent">
-            <div class="productoInfo">
-                <h3>${producto.nombre}</h3>
-                <strong>Cantidad:</strong> ${producto.cantidad}<br>
-                <strong>Precio Total:</strong> ${producto.precioTotal.toFixed(2)}<br>
-            </div>
-            <img src="../imagenes/tacho.svg" alt="Eliminar" class="eliminarImg" data-index="${index}">
-        </div>
-    `;
-    contenedorGuardados.appendChild(item);
+        contenedorGuardados.innerHTML = '';
+        productosGuardados.forEach((producto, index) => {
+            const item = document.createElement('div');
+            item.className = 'productoGuardado';
+            item.innerHTML = `
+                <div class="productoContent">
+                    <div class="productoInfo">
+                        <h3>${producto.nombre}</h3>
+                        <strong>Cantidad:</strong> ${producto.cantidad}<br>
+                        <strong>Precio Total:</strong> ${producto.precioTotal.toFixed(2)}<br>
+                    </div>
+                    <img src="../imagenes/tacho.svg" alt="Eliminar" class="eliminarImg" data-index="${index}">
+                </div>
+            `;
+            contenedorGuardados.appendChild(item);
 
-    totalPrecio += producto.precioTotal;
-});
+            totalPrecio += producto.precioTotal;
+        });
 
-totalPrecioElement.textContent = `Total Precio: $${totalPrecio.toFixed(2)}`;
+        totalPrecioElement.textContent = `Total Precio: $${totalPrecio.toFixed(2)}`;
 
-document.querySelectorAll('.eliminarImg').forEach(img => {
-    img.addEventListener('click', eliminarProducto);
-});
+        document.querySelectorAll('.eliminarImg').forEach(img => {
+            img.addEventListener('click', eliminarProducto);
+        });
     };
 
     const eliminarProducto = async (event) => {
@@ -263,41 +258,35 @@ document.querySelectorAll('.eliminarImg').forEach(img => {
     confirmarCompraButton.addEventListener('click', confirmarCompra);
 
     mostrarProductosGuardados();
+
+    const actualizarEstadoImagenCarrito = () => {
+        const imagenCarrito = document.getElementById('irAlCarrito');
+        if (imagenCarrito) {
+            const productosGuardados = JSON.parse(localStorage.getItem('productosGuardados')) || [];
+
+            if (productosGuardados.length > 0) {
+                imagenCarrito.src = '../imagenes/carritoBlancoLleno.svg';
+
+                Toastify({
+                    text: `Tienes ${productosGuardados.length} producto(s) en el carrito.`,
+                    duration: 3000,
+                    close: true,
+                    gravity: 'top',
+                    position: 'left',
+                    backgroundColor: 'linear-gradient(to right, #00b09b, #96c93d)',
+                    className: 'toastify-left',
+                }).showToast();
+            } else {
+                imagenCarrito.src = '../imagenes/carritoBlanco.svg';
+            }
+        } else {
+            console.error('Element with ID "irAlCarrito" not found.');
+        }
+    };
+
+    actualizarEstadoImagenCarrito();
+
+    document.getElementById('irAlCarrito').addEventListener('click', () => {
+        window.location.href = '../paginas/carrito.html';
+    });
 });
-
-
-const actualizarEstadoImagenCarrito = () => {
-    const imagenCarrito = document.getElementById('irAlCarrito');
-    if (imagenCarrito) {
-        imagenCarrito.addEventListener('click', () => {
-            window.location.href = '../paginas/carrito.html';
-        });
-    } else {
-        console.error('Element with ID "irAlCarrito" not found.');
-    }
-    const productosGuardados = JSON.parse(localStorage.getItem('productosGuardados')) || [];
-
-    if (productosGuardados.length > 0) {
-        imagenCarrito.src = '../imagenes/carritoBlancoLleno.svg';
-
-        Toastify({
-            text: `Tienes ${productosGuardados.length} producto(s) en el carrito.`,
-            duration: 3000,
-            close: true,
-            gravity: 'top',
-            position: 'left',
-            backgroundColor: 'linear-gradient(to right, #00b09b, #96c93d)',
-            className: 'toastify-left',
-        }).showToast();
-    } else {
-        imagenCarrito.src = '../imagenes/carritoBlanco.svg';
-    }
-};
-
-
-actualizarEstadoImagenCarrito();
-
-document.getElementById('irAlCarrito').addEventListener('click', () => {
-    window.location.href = '../paginas/carrito.html';
-});
-
